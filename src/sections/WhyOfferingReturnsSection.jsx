@@ -1,8 +1,8 @@
 const WhyOfferingReturnsSection = () => {
     return (
         <section className="w-full flex flex-col items-center justify-center gap-3 md:gap-5 py-8 md:py-16 lg:py-20 px-4">
-            <h1 className="text-center text-xl md:text-3xl lg:text-5xl font-semibold uppercase">Why We Are Offering Returns?</h1>
-            <div className="flex flex-col items-center justify-center w-full md:w-[85%] lg:w-[70%] text-center">
+            <h1 className="text-center text-xl md:text-2xl font-semibold uppercase">Why We Are Offering Returns?</h1>
+            <div className="flex flex-col items-center justify-center text-base w-full md:w-[85%] lg:w-[70%] text-center">
                 <p className="text-base md:text-lg">Storytelling is our core. When we are not shooting weddings, we are making movies, documentaries, and web series. Weddings help us generate capital for our film projects without giving up our company's equity to investors. We generate revenue from these movies since we align the distribution of our films in advance. Hence, we're able to offer not just incredible wedding memories but also an opportunity to earn from it.</p>
             </div>
             
