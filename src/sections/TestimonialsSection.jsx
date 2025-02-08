@@ -93,10 +93,18 @@ const TestimonialsSection = () => {
                                     {testimonial.text}
                                 </p>
                                 <div className="flex items-center justify-center gap-4 mt-8">
-                                        <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-pink-500 ring-offset-2 ring-offset-[#292929]">
-                                            <span className="text-pink-500 text-4xl"><img loading={"lazy"} src={testimonial.image} className="w-16 h-16 rounded-full object-cover" alt={testimonial.name} /></span>
-                                        </div>
+                                    <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-pink-500 ring-offset-2 ring-offset-[#292929]">
+                                        <img 
+                                            loading="lazy"
+                                            decoding="async"
+                                            src={testimonial.image} 
+                                            className="w-16 h-16 rounded-full object-cover" 
+                                            alt={testimonial.name}
+                                            width={64}
+                                            height={64}
+                                        />
                                     </div>
+                                </div>
                                 <div className="text-center mt-4">
                                     <h4 className="font-semibold text-lg text-pink-500">
                                         {testimonial.name}
