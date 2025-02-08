@@ -1,7 +1,12 @@
+import React from "react";
+import HeaderSection from "./sections/HeaderSection";
+
 function App() {
 
   return (
-    <div></div>
+    <div>
+      <HeaderSection />
+    </div>
   )
 }
 
