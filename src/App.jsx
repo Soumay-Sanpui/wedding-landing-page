@@ -14,10 +14,10 @@ import FixedSection from "./sections/FixedSection";
 function App() {
 
   return (
-    <div className={"font-poppins"}>
+    <div className={"font-poppins overflow-x-hidden"}>
       <HeaderSection />
-      <WhoWeAreSection />
       <TestimonialsSection />
+      <WhoWeAreSection />
       <PortfolioSection />
       <WeddingFilmsSection />
       <WhyOfferingReturnsSection />
