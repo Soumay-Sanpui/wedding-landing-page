@@ -20,7 +20,7 @@ const PortfolioSection = () => {
                     "/Copy of 10.jpg"
                 ].map((src, index) => (
                     <div key={index} className="hover:scale-95 transition-all duration-500 cursor-pointer break-inside-avoid animate-slide-in" data-index={index}>
-                        <img alt={`portfolio-image-${index}`} src={src} />
+                        <img loading={"lazy"} alt={`portfolio-image-${index}`} src={src} />
                     </div>
                 ))}
             </div>

@@ -2,12 +2,12 @@ const HeaderSection = () => {
     return (
         <header className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center">
             <div className="absolute inset-0 bg-black">
-                <img alt="Hero Image" className="w-full h-[125vh] object-cover" src="/053A4649.jpg"/>
+                <img loading={"lazy"} alt="Hero Image" className="w-full h-[125vh] object-cover" src="/053A4649.jpg"/>
             </div>
             {/* Introduction */}
             <div className="relative z-10 w-full flex flex-col justify-center items-center text-center">
                 <div className="mb-4 md:mb-8 flex items-center justify-center">
-                    <img alt="Logo" className="w-2/3 md:w-1/2 lg:w-1/4 h-auto" src="/life_and_times(White Logo).png"/>
+                    <img loading={"lazy"} alt="Logo" className="w-2/3 md:w-1/2 lg:w-1/4 h-auto" src="/life_and_times(White Logo).png"/>
                 </div>
                 <div className={""}>
                     <p className={"text-white font-bold text-2xl"}>

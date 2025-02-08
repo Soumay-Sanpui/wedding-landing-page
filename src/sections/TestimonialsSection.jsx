@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
                                 </p>
                                 <div className="flex items-center justify-center gap-4 mt-8">
                                         <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-pink-500 ring-offset-2 ring-offset-[#292929]">
-                                            <span className="text-pink-500 text-4xl"><img src={testimonial.image} className="w-16 h-16 rounded-full object-cover" alt={testimonial.name} /></span>
+                                            <span className="text-pink-500 text-4xl"><img loading={"lazy"} src={testimonial.image} className="w-16 h-16 rounded-full object-cover" alt={testimonial.name} /></span>
                                         </div>
                                     </div>
                                 <div className="text-center mt-4">
