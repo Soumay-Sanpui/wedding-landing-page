@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FaQuoteLeft } from 'react-icons/fa';
+import { getOptimizedImageUrl } from '../utils/imageUtils';
 
 const TestimonialsSection = () => {
     const testimonials = [
@@ -43,8 +44,25 @@ const TestimonialsSection = () => {
         }
     ];
 
+    const renderTestimonialImage = useCallback(({ image, name }) => (
+        <img 
+            loading="lazy"
+            decoding="async"
+            src={getOptimizedImageUrl(image)} 
+            className="w-16 h-16 rounded-full object-cover" 
+            alt={`${name} testimonial photo`}
+            width={64}
+            height={64}
+            fetchPriority="low"
+        />
+    ), []);
+
     return (
-        <section className="py-8 md:py-20 bg-[#292929] mt-[30vh]" id="portfolio">
+        <section 
+            className="py-8 md:py-20 bg-[#292929] mt-[30vh]" 
+            id="testimonials" 
+            aria-label="Client Testimonials"
+        >
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-16">
                     What Our Clients Say
@@ -63,8 +81,9 @@ const TestimonialsSection = () => {
                             <button
                                 onClick={clickHandler}
                                 className="absolute left-0 z-10 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white hover:text-pink-500 transition-colors"
+                                aria-label="Previous testimonial"
                             >
-                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                                 </svg>
                             </button>
@@ -75,8 +94,9 @@ const TestimonialsSection = () => {
                             <button
                                 onClick={clickHandler}
                                 className="absolute right-0 z-10 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white hover:text-pink-500 transition-colors"
+                                aria-label="Next testimonial"
                             >
-                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
                                 </svg>
                             </button>
@@ -84,42 +104,39 @@ const TestimonialsSection = () => {
                     }
                 >
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-card px-8 py-6 md:px-16 md:py-16">
+                        <article 
+                            key={index} 
+                            className="testimonial-card px-8 py-6 md:px-16 md:py-16"
+                            role="tabpanel"
+                            aria-label={`Testimonial from ${testimonial.name}`}
+                        >
                             <div className="max-w-3xl mx-auto">
-                                <div className="flex justify-center mb-6">
+                                <div className="flex justify-center mb-6" aria-hidden="true">
                                     <FaQuoteLeft className="text-pink-500 text-4xl" />
                                 </div>
-                                <p className="text-white text-base md:text-lg italic mb-8 leading-relaxed px-4">
+                                <blockquote className="text-white text-base md:text-lg italic mb-8 leading-relaxed px-4">
                                     {testimonial.text}
-                                </p>
-                                <div className="flex items-center justify-center gap-4 mt-8">
+                                </blockquote>
+                                <footer className="flex flex-col items-center justify-center gap-4 mt-8">
                                     <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-pink-500 ring-offset-2 ring-offset-[#292929]">
-                                        <img 
-                                            loading="lazy"
-                                            decoding="async"
-                                            src={testimonial.image} 
-                                            className="w-16 h-16 rounded-full object-cover" 
-                                            alt={testimonial.name}
-                                            width={64}
-                                            height={64}
-                                        />
+                                        {renderTestimonialImage(testimonial)}
                                     </div>
-                                </div>
-                                <div className="text-center mt-4">
-                                    <h4 className="font-semibold text-lg text-pink-500">
-                                        {testimonial.name}
-                                    </h4>
-                                    <p className="text-sm text-gray-400">
-                                        {testimonial.location}
-                                    </p>
-                                </div>
+                                    <div className="text-center mt-4">
+                                        <cite className="font-semibold text-lg text-pink-500 not-italic">
+                                            {testimonial.name}
+                                        </cite>
+                                        <p className="text-sm text-gray-400">
+                                            {testimonial.location}
+                                        </p>
+                                    </div>
+                                </footer>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </Carousel>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default TestimonialsSection;

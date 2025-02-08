@@ -18,6 +18,7 @@ export default defineConfig({
             },
             mozjpeg: {
                 quality: 60,
+                progressive: true
             },
             pngquant: {
                 quality: [0.8, 0.9],
@@ -36,7 +37,30 @@ export default defineConfig({
             },
             webp: {
                 quality: 70,
+                method: 6
             }
         }),
     ],
+    build: {
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true
+            }
+        },
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom'],
+                    carousel: ['react-responsive-carousel']
+                }
+            }
+        }
+    },
+    server: {
+        headers: {
+            'Cache-Control': 'public, max-age=31536000'
+        }
+    }
 })
