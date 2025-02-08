@@ -1,7 +1,8 @@
-import React from "react";
 import HeaderSection from "./sections/HeaderSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
-// import AboutSection from "./sections/AboutSection";
+import PortfolioSection from "./sections/PortfolioSection";
+import WeddingFilmsSection from "./sections/WeddingFilmsSection";
+import WhyOfferingReturnsSection from "./sections/WhyOfferingReturnsSection";
 
 function App() {
 
@@ -9,6 +10,9 @@ function App() {
     <div>
       <HeaderSection />
       <TestimonialsSection />
+      <PortfolioSection />
+      <WeddingFilmsSection />
+      <WhyOfferingReturnsSection />
     </div>
   )
 }
