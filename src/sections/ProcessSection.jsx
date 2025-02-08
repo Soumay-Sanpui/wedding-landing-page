@@ -2,14 +2,14 @@ const ProcessSection = () => {
     return (
         <section className="py-8 md:py-16 lg:py-20 flex flex-col items-center justify-center border bg-black">
             <h2 className="text-center text-2xl md:text-4xl lg:text-5xl font-bold uppercase mb-6 md:mb-10 text-white">The Process</h2>
-            <div className="flex flex-col items-start justify-center w-full px-4 md:px-8 lg:px-16">
-                <div className="my-2 md:my-4 flex flex-col md:flex-row items-start md:items-center justify-start gap-3 md:gap-5">
+            <div className="flex flex-col items-center justify-center w-full px-4 md:px-8 lg:px-16">
+                <div className="my-2 md:my-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-5">
                     <h1 className="text-xl md:text-2xl font-bold rounded-md p-2 bg-neutral-100 text-black w-12 text-center">01</h1>
-                    <p className="text-lg md:text-2xl text-white">We understand your vision, preferences, and budget</p>
+                    <p className="text-lg md:text-2xl text-white text-center">We understand your vision, preferences, and budget</p>
                 </div>
-                <div className="my-2 md:my-4 flex flex-col md:flex-row items-start md:items-center justify-start gap-3 md:gap-5">
+                <div className="my-2 md:my-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-5">
                     <h1 className="text-xl md:text-2xl font-bold rounded-md p-2 bg-neutral-100 text-black w-12 text-center">02</h1>
-                    <p className="text-lg md:text-2xl text-white">You choose a plan that works for you</p>
+                    <p className="text-lg md:text-2xl text-white text-center">You choose a plan that works for you</p>
                 </div>
             </div>
 
@@ -24,6 +24,7 @@ const ProcessSection = () => {
                         <ul className="list-disc space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl ml-4 md:ml-6">
                             <li>50% guaranteed return on your wedding photography budget within 3 years.</li>
                             <li>Example: If your wedding photography costs ₹1 lakh, you'll receive ₹50,000 as an assured return.</li>
+                            <li>This is a potentially high-return opportunity and is subject to the commercial success of our film projects.</li>
                         </ul>
                     </div>
                 </div>
