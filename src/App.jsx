@@ -6,7 +6,7 @@ import WhyOfferingReturnsSection from "./sections/WhyOfferingReturnsSection";
 import WhoWeAreSection from "./sections/WhoWeAreSection";
 import ProcessSection from "./sections/ProcessSection";
 import WhyChooseUsSection from "./sections/WhyChooseUsSection";
-import WhatOurClientsSaySection from "./sections/WhatOurClientsSaySection";
+// import WhatOurClientsSaySection from "./sections/WhatOurClientsSaySection";
 import ContactSection from "./sections/ContactSection";
 import FixedSection from "./sections/FixedSection";
 
@@ -23,7 +23,8 @@ function App() {
       <WhyOfferingReturnsSection />
       <ProcessSection />
       <WhyChooseUsSection />
-      <WhatOurClientsSaySection />
+      {/* <WhatOurClientsSaySection /> */}
+      <TestimonialsSection />
       <ContactSection />
       <FixedSection />
     </div>
