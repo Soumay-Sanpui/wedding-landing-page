@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderSection from "./sections/HeaderSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
 // import AboutSection from "./sections/AboutSection";
@@ -6,7 +5,7 @@ import TestimonialsSection from "./sections/TestimonialsSection";
 function App() {
 
   return (
-    <div>
+    <div className={"font-poppins"}>
       <HeaderSection />
       <TestimonialsSection />
     </div>
