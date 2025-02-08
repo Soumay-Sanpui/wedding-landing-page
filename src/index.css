@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/* Add these styles for the testimonial carousel */
+.testimonial-carousel .carousel .slide {
+    background: transparent;
+    padding: 0;
+}
+
+.testimonial-carousel .carousel .control-dots .dot {
+    background: #ec4899;
+    box-shadow: none;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+}
+
+.testimonial-carousel .carousel .control-dots .dot.selected {
+    background: #ec4899;
+    transform: scale(1.5);
+}
+
+.testimonial-carousel .carousel.carousel-slider {
+    overflow: visible;
+}
