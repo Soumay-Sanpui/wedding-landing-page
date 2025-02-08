@@ -59,12 +59,12 @@ const TestimonialsSection = () => {
 
     return (
         <section 
-            className="py-8 md:py-20 bg-[#292929] mt-[30vh]" 
+            className="py-4 md:py-20 bg-[#292929] mt-[30vh]" 
             id="testimonials" 
             aria-label="Client Testimonials"
         >
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-16">
+                <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-10">
                     What Our Clients Say
                 </h2>
 
@@ -102,26 +102,35 @@ const TestimonialsSection = () => {
                             </button>
                         )
                     }
+                    renderIndicator={(onClickHandler, isSelected, index) => (
+                        <button
+                            type="button"
+                            onClick={onClickHandler}
+                            className={`dot ${isSelected ? 'selected' : ''}`}
+                            style={{ margin: '0 4px' }}
+                            aria-label={`Go to testimonial ${index + 1}`}
+                        />
+                    )}
                 >
                     {testimonials.map((testimonial, index) => (
                         <article 
                             key={index} 
-                            className="testimonial-card px-8 py-6 md:px-16 md:py-16"
+                            className="testimonial-card px-8 py-8 md:px-16 md:py-10"
                             role="tabpanel"
                             aria-label={`Testimonial from ${testimonial.name}`}
                         >
                             <div className="max-w-3xl mx-auto">
-                                <div className="flex justify-center mb-6" aria-hidden="true">
+                                <div className="flex justify-center mb-4" aria-hidden="true">
                                     <FaQuoteLeft className="text-pink-500 text-4xl" />
                                 </div>
-                                <blockquote className="text-white text-base md:text-lg italic mb-8 leading-relaxed px-4">
+                                <blockquote className="text-white text-base md:text-lg italic mb-4 leading-relaxed px-4">
                                     {testimonial.text}
                                 </blockquote>
-                                <footer className="flex flex-col items-center justify-center gap-4 mt-8">
+                                <footer className="flex flex-col items-center justify-center gap-4 mt-4">
                                     <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-pink-500 ring-offset-2 ring-offset-[#292929]">
                                         {renderTestimonialImage(testimonial)}
                                     </div>
-                                    <div className="text-center mt-4">
+                                    <div className="text-center mt-2">
                                         <cite className="font-semibold text-lg text-pink-500 not-italic">
                                             {testimonial.name}
                                         </cite>
